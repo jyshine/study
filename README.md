@@ -1,7 +1,7 @@
 # Study
-* 공부한 내용을 정리하는 공간
+* python, deep learning
 
-
+* * *
 
 ### Python
-* [Python Basics](https://github.com/jyshine/study/blob/main/Python_Basic.ipynb)
+1. [Python Basics](https://github.com/jyshine/study/blob/main/Python_Basic.ipynb)
