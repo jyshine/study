@@ -5,4 +5,5 @@
 * * *
 
 ### Python
-1. [Python Basics](https://github.com/jyshine/study/python/Python_Basic.ipynb.ipynb)
+1. [Python Basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb)
+2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb)
