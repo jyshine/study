@@ -5,5 +5,5 @@
 * * *
 
 ### Python
-1. [Python Basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb)
-2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb)
+1. [python basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb) 파이썬 기초 공부
+2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) 구글 트랜드 피드 
