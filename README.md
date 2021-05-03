@@ -9,3 +9,7 @@
   (파이썬 기초)
 2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) 
   (구글 트랜드 피드)
+
+## Problem Solving
+1. n*n 2차원 배열 회전
+
