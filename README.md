@@ -10,6 +10,6 @@
 3. [선형 회귀](https://github.com/jyshine/study/blob/main/python/linear_regression.ipynb)(딥러닝)
 
 ## Problem Solving
-1. n*n 2차원 배열 회전
+1. N x N 2차원 배열 회전
 
 
