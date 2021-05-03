@@ -5,17 +5,11 @@
 * * *
 
 ### Python
-<<<<<<< HEAD
-1. [python basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb) 
-  (파이썬 기초)
-2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) 
-  (구글 트랜드 피드)
+1. [python basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb) (파이썬 기초)
+2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) (구글 트랜드 피드)  
+3. [선형 회귀](https://github.com/jyshine/study/blob/main/python/linear_regression.ipynb)(딥러닝)
 
 ## Problem Solving
 1. n*n 2차원 배열 회전
 
-=======
-1. [python basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb) (파이썬 기초)
-2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) (구글 트랜드 피드)  
-3. [선형 회귀](https://github.com/jyshine/study/blob/main/python/linear_regression.ipynb)(딥러닝)
->>>>>>> 5de15fef1def406d2e11782cc7c60fd6479dfde2
+
