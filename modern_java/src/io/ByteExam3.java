@@ -4,6 +4,7 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 
 public class ByteExam3 {
+
     //Java IO 객체는 인스턴스를 만들고 모두 사용하면 close() 메소드를 해워야한다.
     //try-with-resource
     //사용한 자원을 자동으로 종료 시켜주는 기능
