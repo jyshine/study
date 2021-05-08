@@ -2,6 +2,7 @@ package basic;
 
 public class MathTest {
     /**
+     *  Math
      *  수학 계산
      *  cos
      *  sin
