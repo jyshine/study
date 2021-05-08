@@ -12,4 +12,6 @@
 ## Problem Solving
 1. N x N 2차원 배열 회전
 
+## Java
+1. [Modern Java] (https://github.com/jyshine/study/tree/main/modern_java)(모던 자바 학습)
 
