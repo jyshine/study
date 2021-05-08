@@ -1,15 +1,17 @@
 package io;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
+
 
 public class ByteExam1 {
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
         FileInputStream fileInputStream = null;
         FileOutputStream fileOutputStream = null;
+
         try {
             fileInputStream = new FileInputStream("src/io/ByteExam1.java");
             fileOutputStream = new FileOutputStream("src/io/byte.txt");
@@ -30,5 +32,8 @@ public class ByteExam1 {
                 e.printStackTrace();
             }
         }
+
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime-startTime);
     }
 }

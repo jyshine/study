@@ -3,9 +3,7 @@ package io;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-
-public class ByteExam1 {
-
+public class ByteExam2 {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
@@ -13,13 +11,18 @@ public class ByteExam1 {
         FileOutputStream fileOutputStream = null;
 
         try {
+
             fileInputStream = new FileInputStream("src/io/ByteExam1.java");
             fileOutputStream = new FileOutputStream("src/io/byte.txt");
 
-            int readData = -1;
+            int readCount = -1;
+            //1바이트처리가 아니라
+            //512 바이트만큼 처리하기
+            byte[] buffer = new byte[512];
 
-            while ((readData = fileInputStream.read()) != -1){
-                fileOutputStream.write(readData);
+            while ((readCount = fileInputStream.read(buffer)) != -1){
+                //최대 512 바이트 만큼 읽음
+                fileOutputStream.write(buffer,0,readCount);
             }
 
         } catch (Exception e) {

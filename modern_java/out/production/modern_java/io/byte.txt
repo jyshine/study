@@ -8,7 +8,7 @@ public class ByteExam1 {
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-
+        
         FileInputStream fileInputStream = null;
         FileOutputStream fileOutputStream = null;
 
