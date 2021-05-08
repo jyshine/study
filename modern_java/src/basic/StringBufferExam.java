@@ -1,4 +1,8 @@
 package basic;
+
+/**
+ * StringBuffer
+ */
 public class StringBufferExam {
     //메소드 체이닝 : 자기자신을 리턴하여 계속해서 자신의 메소드를 호출하는 방식
 
