@@ -1,5 +1,10 @@
 package generic;
 
+/**
+ * generic
+ *
+ * @param <E>
+ */
 public class Box<E> {
     private E object;
 
