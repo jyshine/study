@@ -41,6 +41,8 @@ wait를 만나면 해당 Thread 객체에 모니터링락의 권한을 가지고
 wait, notify 동기화 블록 안에서 사용.
 
 
+Daemon : 리눅스 유닉스 계열 운영체제에서 백그라운드에서 동작하는 프로그램 windows는 서비스;
+Java에서도 Daemon Thread를 통해 유사하게 동작하게 가능
 
 
 
