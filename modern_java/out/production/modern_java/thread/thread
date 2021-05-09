@@ -22,7 +22,7 @@ Thread 공유 객체
     붙어 있을 경우 먼저 호출한 메소드가 객체의 사용권(Monitoring Lock)을 얻는다.
     해당 모니터링 락은 메소드 실행이 종료되거나, wait()와 같은 메소드를 만나기 전까지 유지된다.
     마지막에 대기하는 쓰레드가 너무 오래 기다리는것을 막기위해서 메소드에 synchronized를 붙이지 않고,
-    문제가 있을것 같은 부분만 synchronized블록을 사용한다.
+    문제가 있을것 같은 부분만 synchronized 블록을 사용한다.
 
 Thread 상태 제어
 
@@ -37,7 +37,8 @@ thread1      thread2       thread3
 
 
 
-
+wait를 만나면 해당 Thread 객체에 모니터링락의 권한을 가지고 있다
+wait, notify 동기화 블록 안에서 사용.
 
 
 
