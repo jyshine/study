@@ -3,3 +3,21 @@ Thread 실행 시키는 방법 두 가지.
     -Runable Interface Implements
 
 
+Thread 공유 객체
+    MusicBox
+        playMusicA();
+        playMusicB();
+        playMusicC();
+
+    MusicPlayer <- Thread.class
+        int type;
+        MusicBox musicBox;
+
+    MusicPlayer Thread 객체 만들어 실행
+
+동기화 메소드와 동기화 블록
+    공유 객체였던 메소드가 동시에 호출되서 오류가 생길 가능성 있음
+    공유객체가 가진 메소드를 동시에 호출 되지 않도록 하는 방법
+    여러개의 Thread들이 공유객체의 메소드를 사용할 때 메소드에 synchronized가
+    붙어 있을 경우 먼저 호출한 메소드가 객체의 사용권(Monitoring Lock)을 얻는다.
+    해당 모니터링 락은 메소드 실행이 종료되거나, wait()와 같은 메소드를 만나기 전까지 유지된다.
