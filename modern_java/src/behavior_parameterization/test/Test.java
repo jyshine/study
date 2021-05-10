@@ -81,7 +81,6 @@ public class Test {
      *  => 동작 파라미터화, 즉 메서드가 다양한 동작을 받아서 내부적으로 다양한 동작을 수행할 수 있다.
      *
      */
-
     public static List<Apple> filterApplesPredicate(List<Apple>  inventory, ApplePredicate p){
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory){
@@ -93,6 +92,14 @@ public class Test {
     }
 
 
+    /**
+     * => 필터 메서드에 전략 전달. ApplePredicate를 객체로 캡슐화된 불리언 표현식을 이용해서 필터링할 수 있다.
+     * => 한 개의 파라미터에 다양한 동작이 가능하겠끔 했다.
+     *
+     * => 하지만 객체로 감싸서 전달해야하는 단점이 있다.
+     * => 익명 함수로 메서드의 동작을 직접 파리미터화
+     *
+     */
 
     public static void main(String[] args) {
         List<Apple> inventory = new ArrayList<>();
@@ -108,14 +115,24 @@ public class Test {
 //        List<Apple> result = filterApplesByWeight(inventory,120); //필터링 색을 받아서 필터링
 //        List<Apple> result = filterApplesByColorAndWeight(inventory,null,120, false); //필터링을 합쳤다.
 
-        AppleGreenColorPredicate p = new AppleGreenColorPredicate();
-        AppleHeavyWeightPredicate p2 = new AppleHeavyWeightPredicate();
-        List<Apple> result = filterApplesPredicate(inventory,p2);
+
+        //동작을 파라미터화하고 다양한 필터 전략
+//        List<Apple> result = filterApplesPredicate(inventory, new AppleGreenColorPredicate());
+//        List<Apple> result = filterApplesPredicate(inventory, new AppleHeavyWeightPredicate());
+//        List<Apple> result = filterApplesPredicate(inventory, new AppleRedAndHeavyPredicate());
+
+        //익명 함수로 메서드의 동작을 직접 파리미터화
+        List<Apple> result = filterApplesPredicate(inventory, new ApplePredicate() {
+            @Override
+            public boolean applePredicate(Apple apple) {
+                return ColorEnum.RED.equals(apple.getColor());
+            }
+        });
 
 
 
         for (Apple apple : result){
-            System.out.println(apple.getColor());
+            System.out.println(apple.toString());
         }
     }
 }
