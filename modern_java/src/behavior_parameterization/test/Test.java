@@ -2,6 +2,7 @@ package behavior_parameterization.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public class Test {
@@ -98,8 +99,42 @@ public class Test {
      *
      * => 하지만 객체로 감싸서 전달해야하는 단점이 있다.
      * => 익명 함수로 메서드의 동작을 직접 파리미터화
+     *        List<Apple> result = filterApplesPredicate(inventory, new ApplePredicate() {
+     *             @Override
+     *             public boolean applePredicate(Apple apple) {
+     *                 return ColorEnum.RED.equals(apple.getColor());
+     *             }
+     *         });
+     */
+
+
+    /**
+     *
+     *  => 코드량이 많고 익명 클래스에 익숙하지 않은 프로그래머들이 많음.
+     *  => 유지보수에 좋지 않다.
+     *  => 람다 표현식을 사용하여 더 간단히 구현한다.
+     *
+     *         List<Apple> result = filterApplesPredicate(inventory,
+     *                 (Apple apple) -> ColorEnum.RED.equals(apple.getColor()));
      *
      */
+
+
+    /**
+     *  => 리스트 형식으로 추상화를 하면 유연성과 간결함을 추가할 수 있다.
+     *  => PredicateAbstractReturnList
+     *  => 리스트 형식을 추상화하면 사과뿐 아니라 바나나, 딸기, 오랜지도 필터 메소드를 사용할 수 있다.
+     */
+    public static <T> List<T> filter(List<T> list, PredicateAbstractReturnList<T> p){
+        List<T> result = new ArrayList<>();
+        for(T e: list){
+            if(p.filterCondition(e)){
+                result.add(e);
+            }
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         List<Apple> inventory = new ArrayList<>();
@@ -122,17 +157,36 @@ public class Test {
 //        List<Apple> result = filterApplesPredicate(inventory, new AppleRedAndHeavyPredicate());
 
         //익명 함수로 메서드의 동작을 직접 파리미터화
-        List<Apple> result = filterApplesPredicate(inventory, new ApplePredicate() {
-            @Override
-            public boolean applePredicate(Apple apple) {
-                return ColorEnum.RED.equals(apple.getColor());
-            }
-        });
+//        List<Apple> result = filterApplesPredicate(inventory, new ApplePredicate() {
+//            @Override
+//            public boolean applePredicate(Apple apple) {
+//                return ColorEnum.RED.equals(apple.getColor());
+//            }
+//        });
 
 
+        //람다식으로 간결함 추가
+//        List<Apple> result = filterApplesPredicate(inventory,
+//                (Apple apple) -> ColorEnum.RED.equals(apple.getColor()));
+
+
+        List<Banana> inventoryBanana = new ArrayList<>();
+        inventoryBanana.add(new Banana(ColorEnum.GREEN,100));
+        inventoryBanana.add(new Banana(ColorEnum.RED,200));
+        inventoryBanana.add(new Banana(ColorEnum.RED,140));
+        inventoryBanana.add(new Banana(ColorEnum.RED,150));
+        inventoryBanana.add(new Banana(ColorEnum.GREEN,300));
+        //리스트 형식 추상화로 유연성 추가
+        List<Apple> result = filter(inventory, (Apple apple) -> ColorEnum.RED.equals(apple.getColor()));
+
+        List<Banana> result2 = filter(inventoryBanana, (Banana banana) -> ColorEnum.RED.equals(banana.getColor()));
 
         for (Apple apple : result){
             System.out.println(apple.toString());
+        }
+
+        for (Banana banana : result2){
+            System.out.println(banana.toString());
         }
     }
 }
