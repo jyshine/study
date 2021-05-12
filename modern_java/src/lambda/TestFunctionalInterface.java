@@ -10,7 +10,7 @@ import java.util.function.Function;
 public class TestFunctionalInterface {
 
     /**
-     * Consumer 테스
+     * Consumer 테스트
      * @param list
      * @param c
      * @param <T>

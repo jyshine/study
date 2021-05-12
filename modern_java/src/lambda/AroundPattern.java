@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.function.Function;
 
 public class AroundPattern {
 
@@ -40,8 +41,16 @@ public class AroundPattern {
 
             String result = processFile2((BufferedReader br) -> br.readLine() + br.readLine()); // 두줄 출력
 
-
             System.out.println(result);
+
+            Function<BufferedReader,String> f = (BufferedReader b) -> {
+                try{
+                    return b.readLine();
+                }catch (IOException e){
+                    throw new RuntimeException(e);
+                }
+            };
+
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -51,4 +51,32 @@
 함수형 인터페이스 사용
     -Predicate
     -Consumer
+    -Function
 
+제너릭 파라미터는 참조형만 사용 가능하다.
+박싱(Boxing) 기본형을 참조형으로 변환하는 기능.
+언박싱(unboxing) 참조형을 기본형으로 변환하는 반대 동작.
+박싱과 언박싱이 자동으로 이루어지는 오토박싱 기능 제공한다.
+하지만 이런 변환은 메모리 소모된다.
+
+오토박싱 피할 수 있는 함수형 인터페이스 제공
+
+
+람다와 함수형 인테페이스 예제
+
+-불리언 표현 Predicate<List<T>>
+    (List<String> list) -> list.isEmpty()
+-객체 생성 Supplier<T>
+    () -> new Apple(10)
+-객체에서 소비 Consumer<T>
+    (Apple a) -> System.out.println(a.getWeight())
+-객체에서 선택/추출 Function<R,T> , ToIntFunction<String> ..
+    (String s) -> s.length()
+-두 값 조합 IntBinaryOperator
+    (int a, int b) -> a*b
+-두 객체 비교 Comparator<T> , BiFunction<A,B,Integer>
+    (Apple a, Apple b) -> a.getWeight().compareTo(b.getWeight())
+
+
+
+예외 처리 예시
