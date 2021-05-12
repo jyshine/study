@@ -19,16 +19,28 @@ public class AroundPattern {
      * @throws IOException
      */
     public static String processFile() throws IOException {
-        try(BufferedReader br = new BufferedReader(new FileReader("/src/lambda/lambda.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader("src/lambda/lambda"))){
             return br.readLine();
         }
     }
+
+    public static String processFile2(BufferReaderProcessor p) throws IOException {
+        try(BufferedReader br = new BufferedReader(new FileReader("src/lambda/lambda"))){
+            return p.bufferReaderProcessor(br);
+        }
+    }
+
 
     public static void main(String[] args) {
 
 
         try {
-            String result = processFile();
+
+            //String result = processFile(); // 한줄만 출력
+
+            String result = processFile2((BufferedReader br) -> br.readLine() + br.readLine()); // 두줄 출력
+
+
             System.out.println(result);
 
         } catch (IOException e) {
