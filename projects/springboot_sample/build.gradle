@@ -1,16 +1,36 @@
 plugins {
+    id 'org.springframework.boot' version '2.3.10.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
-group 'com.shine'
-version '1.0-SNAPSHOT'
+group = 'com.shine'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
 
-sourceCompatibility = 1.8
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Query 파라미터에 로그 남겨주는 외부 라이브러리, 실무에선 성능 테스트 필요.
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7'
+
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
 }
