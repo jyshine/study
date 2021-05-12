@@ -1,6 +1,6 @@
 package lambda;
 
-public class Test {
+public class LambdaBasicTest {
     static Runnable r1 = () -> System.out.println("Hello World ");
 
     static Runnable r2 = new Runnable() {
