@@ -1,3 +1,39 @@
-람다식 표현
+람다 표현식 : 메서드로 전달할 수 있는 익명 함수를 단순화한 것이라고 할 수 있다.
+           람다표현식에는 이름은 없지만 파라미터 리스트, 바디, 반환 형식, 발생할 수 있는 예외 리스트를 가질 수 있음.
+    -익명
+    -함수
+    -전달
+    -간결성
 
 
+    ()              ->      {}
+    람다 파라미터     화살표     람다 바디
+
+
+    예시
+        boolean => (List<String> list) -> list.isEmpty()
+        객체 생성 => () -> new Apple(10)
+        객체 소비 => (a) -> {
+                    System.out.println(a.getWeight());
+                    }
+        객체 추출  => (String s) -> s.length()
+        값 조합   => (int a, int b) -> a*b
+        객체 비교 => (Apple a1, Apple a2) ->
+                        a1.getWeight().compareTo(a2.getWeight())
+
+        (String s) -> s.length()
+
+        (Apple a) -> a.getWeight()
+
+        (int x, int y) -> {
+            System.out.println("Result :");
+            System.out.println(x + y);
+            }
+
+        () -> 42
+
+        (Apple a1, Apple a2) -> a1.getWeight().capareTo(a2.getWeight())
+
+함수형 인터페이스
+    람다 표현식으로 함수형 인터페이스를 추상 메서드 구현을 직접 전달할 수 있으므로
+    전체 표현식을 함수형 인터페이스의 인스턴스로 취급 => 함수형 인터페이스를 구현한 클래스의 인스턴스
