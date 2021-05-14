@@ -5,10 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -27,6 +26,9 @@ public class Roles {
 
     @Column(name = "role_name")
     private String roleName;
+
+    @OneToMany(mappedBy = "roles")
+    private List<StaffRoles> staffRoles = new ArrayList<>();
 
     public Roles(String roleKey, String roleName) {
         this.roleKey = roleKey;

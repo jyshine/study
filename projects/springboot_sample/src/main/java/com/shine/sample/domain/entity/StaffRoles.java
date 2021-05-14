@@ -3,9 +3,13 @@ package com.shine.sample.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.lang.invoke.LambdaConversionException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
+import static javax.persistence.FetchType.LAZY;
 
 @Setter
 @Getter
@@ -19,14 +23,29 @@ public class StaffRoles {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "role_key")
-    private String roleKey;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "staff_id")
+    private Staffs staffs;
 
-//    @OneToMany(mappedBy = "staffroles") //외래키아 없는 쪽에 mappedBy를 입력 하는걸 권장
-//    private List<Staffs> staffs = new ArrayList<>();
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "role_id")
+    private Roles roles;
 
 
-    public StaffRoles(String roleKey) {
-        this.roleKey = roleKey;
+    public static StaffRoles createStaffRoles(Staffs staffs, Roles roles){
+        StaffRoles staffRoles = new StaffRoles();
+        staffRoles.setStaffs(staffs);
+        staffRoles.setRoles(roles);
+
+        return staffRoles;
+    }
+
+    @Override
+    public String toString() {
+        return "StaffRoles{" +
+                "id=" + id +
+                ", staffs=" + staffs +
+                ", roles=" + roles +
+                '}';
     }
 }

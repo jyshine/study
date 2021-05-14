@@ -6,6 +6,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -29,15 +33,21 @@ public class Staffs {
 
     private String tell;
 
-    public Staffs(String username, String email, String password, String tell) {
+    private int active;
+
+    @OneToMany(mappedBy = "staffs")   // cascade는 유의해서 사용해야한다.
+    private List<StaffRoles> staffRoles = new ArrayList<>();
+
+    public Staffs(String username, String email, String password, String tell,int active) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.tell = tell;
+        this.active = active;
+
+
 
     }
-
-
 
     @Override
     public String toString() {
@@ -47,6 +57,7 @@ public class Staffs {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", tell='" + tell + '\'' +
+                ", staffRoles=" + staffRoles +
                 '}';
     }
 }
