@@ -1,17 +1,18 @@
 package com.shine.sample.domain.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Getter
 @Setter
 @Entity
+//@ToString(of = {"id","email","username","tell"})
+@NoArgsConstructor
 public class Staffs {
 
     @Id
@@ -19,11 +20,8 @@ public class Staffs {
     @Column(name = "staff_id")
     private Long id;
 
-    @Column(name = "first_name")
-    private String firstname;
-
-    @Column(name = "last_name")
-    private String lastname;
+    @Column(name = "user_name")
+    private String username;
 
     private String email;
 
@@ -31,4 +29,24 @@ public class Staffs {
 
     private String tell;
 
+    public Staffs(String username, String email, String password, String tell) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.tell = tell;
+
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Staffs{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", tell='" + tell + '\'' +
+                '}';
+    }
 }
