@@ -40,12 +40,6 @@ public class StaffRoles {
         return staffRoles;
     }
 
-    @Override
-    public String toString() {
-        return "StaffRoles{" +
-                "id=" + id +
-                ", staffs=" + staffs +
-                ", roles=" + roles +
-                '}';
-    }
+
+
 }

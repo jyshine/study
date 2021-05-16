@@ -19,6 +19,4 @@ public interface StaffsRepository extends JpaRepository<Staffs,Long> {
 
 
 
-
-
 }

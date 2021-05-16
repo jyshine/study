@@ -17,10 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
@@ -39,6 +36,8 @@ class StaffServiceTest {
     @Autowired
     StaffRolesRepository staffRolesRepository;
 
+    @Autowired
+    StaffService staffService;
 
     @BeforeEach
     void setUp() {
@@ -52,26 +51,18 @@ class StaffServiceTest {
         staffRolesRepository.save(
                 StaffRoles.createStaffRoles(
                         staffsRepository.save(new Staffs("test111","test@gmail.com","1234","01012341234",1)),
-                        rolesRepository.findByRoleKey("admin")));
+                        rolesRepository.findByRoleKey("guest")));
 
         staffRolesRepository.save(
                 StaffRoles.createStaffRoles(
                         staffsRepository.save(new Staffs("test222","test222@gmail.com","1234","01012341234",1)),
-                        rolesRepository.findByRoleKey("admin")));
+                        rolesRepository.findByRoleKey("user")));
 
 
         List<Roles> roles = rolesRepository.findAll();
         Staffs staff = new Staffs("test333", "333@gmail.com", "1234", "33333333", 1);
-
+        staff.addRoles(roles);
         Staffs savedStaff = staffsRepository.save(staff);
-        List<StaffRoles> staffRoles = new ArrayList<>();
-
-        for(Roles role: roles){
-            staffRoles.add(StaffRoles.createStaffRoles(staff,role));
-        }
-
-        staffRolesRepository.saveAll(staffRoles);
-
 
     }
 
@@ -88,15 +79,14 @@ class StaffServiceTest {
     }
     @Test
     void 관리자_조회_리스트_테스트(){
-        List<StaffRoles> staffsList = staffRolesRepository.findAllStaffRoles();
-
-        for(StaffRoles staffsDto : staffsList){
-            System.out.println(staffsDto.toString());
+        List<Staffs> allByDto_optimization = staffService.findAllByStaffRoles();
+        for(Staffs staff : allByDto_optimization){
+            for(int i=0; i<staff.getStaffRoles().size(); i++){
+                System.out.println(staff.getUsername()+" : "+staff.getStaffRoles().get(i).getRoles().getRoleName());
+            }
         }
-
-//        assertThat(staffsDtoList.size()).isEqualTo(2);
     }
-//
+
 //    @Test
 //    void 관리자_조회_테스트(){
 //        Staffs test1 = staffsRepository.findByUsername("test111");

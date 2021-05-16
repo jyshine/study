@@ -35,14 +35,14 @@ public class Staffs {
 
     private int active;
 
-    @OneToMany(mappedBy = "staffs")
+    @OneToMany(mappedBy = "staffs", cascade = CascadeType.ALL)
     private List<StaffRoles> staffRoles = new ArrayList<>();
 
 
-    public Staffs addRoles(StaffRoles roles){
-        staffRoles.add(roles);
-        roles.setStaffs(this);
-        return this;
+    public void addRoles(List<Roles> roles){
+        for(Roles role: roles){
+            staffRoles.add(StaffRoles.createStaffRoles(this,role));
+        }
     }
 
 
@@ -54,6 +54,15 @@ public class Staffs {
         this.active = active;
 
 
+    }
+
+    public Staffs( String username, String email, String password, String tell, int active, List<StaffRoles> staffRoles) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.tell = tell;
+        this.active = active;
+        this.staffRoles = staffRoles;
     }
 
     @Override
