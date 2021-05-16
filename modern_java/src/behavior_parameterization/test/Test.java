@@ -1,6 +1,7 @@
 package behavior_parameterization.test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -178,15 +179,15 @@ public class Test {
         inventoryBanana.add(new Banana(ColorEnum.GREEN,300));
         //리스트 형식 추상화로 유연성 추가
         List<Apple> result = filter(inventory, (Apple apple) -> ColorEnum.RED.equals(apple.getColor()));
-
         List<Banana> result2 = filter(inventoryBanana, (Banana banana) -> ColorEnum.RED.equals(banana.getColor()));
 
         for (Apple apple : result){
             System.out.println(apple.toString());
         }
-
         for (Banana banana : result2){
             System.out.println(banana.toString());
         }
+
+
     }
 }

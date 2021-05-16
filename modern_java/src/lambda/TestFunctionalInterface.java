@@ -52,5 +52,8 @@ public class TestFunctionalInterface {
         );
         System.out.println(functionalTestResult.toString());
 
+
     }
+
+
 }

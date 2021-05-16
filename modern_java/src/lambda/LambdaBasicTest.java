@@ -21,6 +21,8 @@ public class LambdaBasicTest {
         process(r1);
         process(r2);
         process(()-> System.out.println("Hello world 3"));
+
+
     }
 
 }
