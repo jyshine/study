@@ -35,16 +35,23 @@ public class Staffs {
 
     private int active;
 
-    @OneToMany(mappedBy = "staffs")   // cascade는 유의해서 사용해야한다.
+    @OneToMany(mappedBy = "staffs")
     private List<StaffRoles> staffRoles = new ArrayList<>();
 
-    public Staffs(String username, String email, String password, String tell,int active) {
+
+    public Staffs addRoles(StaffRoles roles){
+        staffRoles.add(roles);
+        roles.setStaffs(this);
+        return this;
+    }
+
+
+    public Staffs(String username, String email, String password, String tell,int active ) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.tell = tell;
         this.active = active;
-
 
 
     }
