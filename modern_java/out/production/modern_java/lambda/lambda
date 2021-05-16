@@ -93,7 +93,24 @@
     명시적으로 메서드명을 참조함으로써 가독성 높힘
 
     1)정적 메서드 참조
+        (args) -> ClassName.staicMethod(args)
+        ClassName::staticMethod
+
     2)다양한 형식의 인스턴스 메서드 참조
-        (String s) -> s.toUpperCase() => String::toUpperCase 로 표현
+        (arg0, rest) -> arg0.instanceMethod(rest)
+        ClassName::instanceMethod
+
+        List<String> str = Arrays.asList("a","b","A","B")
+        str.sort((s1,s2) -> s1.compareToIgnoreCase(s2))
+        str.sort(String::compareToIgnoreCase);
+
     3)기존 객체의 인스턴스 메서드 참조
+        (args) -> expr.instanceMethod(args)
+        expr::instanceMethod
+
+        Predicate<String> startsWithNumber = (String string) -> this.strtsWithNumber(string);
+        Predicate<String> startsWithNumber = this::startsWithNumber
+
+생성자 참조
+    Class::New 처럼 클래스명과 new 키워드를 이용해 기존 생성자의 참조를 만들 수 있다.
 

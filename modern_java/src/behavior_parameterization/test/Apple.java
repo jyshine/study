@@ -9,6 +9,12 @@ public class Apple {
         this.weight = weight;
     }
 
+    public Apple() {
+    }
+
+    public Apple(int weight) {
+        this.weight = weight;
+    }
 
     @Override
     public String toString() {
