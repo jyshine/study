@@ -59,6 +59,12 @@ class StaffServiceTest {
                         rolesRepository.findByRoleKey("user")));
 
 
+
+
+    }
+
+    @Test
+    void 관리자_등록_테스트(){
         List<Roles> roles = rolesRepository.findAll();
         Staffs staff = new Staffs("test333", "333@gmail.com", "1234", "33333333", 1);
         staff.addRoles(roles);
@@ -66,17 +72,6 @@ class StaffServiceTest {
 
     }
 
-    @Test
-    void 관리자_등록_테스트(){
-        Staffs staffs = new Staffs("aaaaa","aaaaa@gmail.com","1234","01012341234",1);
-//        Staffs savedStaffs = staffsRepository.save(staffs);
-
-    }
-    @Test
-    void 관리자_조회_리스트_테스트_01(){
-        List<Staffs> staffsList = staffsRepository.findAll();
-
-    }
     @Test
     void 관리자_조회_리스트_테스트(){
         List<Staffs> allByDto_optimization = staffService.findAllByStaffRoles();
@@ -112,7 +107,6 @@ class StaffServiceTest {
     void 관리자_권한_수정(){
         long id = 2;
         Staffs test1 = staffsRepository.findByUsername("test111");
-
         Optional<Roles> roles = rolesRepository.findById(id);
         StaffRoles staffRoles = staffRolesRepository.findByStaffs(test1);
         staffRoles.setRoles(roles.get());

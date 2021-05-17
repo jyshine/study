@@ -20,6 +20,10 @@ public class StaffService {
     private final StaffRolesRepository staffRolesRepository;
 
 
+    /**
+     * 관리자 조회 기능 1:N
+     * @return
+     */
     public List<Staffs> findAllByStaffRoles() {
         //루트 조회(toOne 코드를 모두 한번에 조회)
         List<Staffs> result = staffsRepository.findAll();
@@ -33,7 +37,6 @@ public class StaffService {
 
     private Map<Long, List<StaffRoles>> findStaffRolesMap(List<Long> staffIds) {
         List<StaffRoles> staffRoles = staffRolesRepository.findByStaffId(staffIds);
-
         // key가 staffId인 맵객체 반환
         Map<Long, List<StaffRoles>> staffMap = staffRoles.stream()
                 .collect(Collectors.groupingBy(sr -> sr.getStaffs().getId()));

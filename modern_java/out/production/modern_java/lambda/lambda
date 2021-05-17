@@ -113,4 +113,10 @@
 
 생성자 참조
     Class::New 처럼 클래스명과 new 키워드를 이용해 기존 생성자의 참조를 만들 수 있다.
+    생성자 인수가 3개 이상을 경우 직접 함수형 인터페이스를 만들면 된다.
 
+    public interface TriFunction<T,U,V,R>{
+        R apply(T t, U u, V v);
+    }
+
+    TriFunction<Integer, Integer, Integer, Color> colorFactory = Color::new;
