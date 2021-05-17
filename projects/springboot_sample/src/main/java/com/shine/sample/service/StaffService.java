@@ -23,25 +23,19 @@ public class StaffService {
     public List<Staffs> findAllByStaffRoles() {
         //루트 조회(toOne 코드를 모두 한번에 조회)
         List<Staffs> result = staffsRepository.findAll();
-
         //orderItem 컬렉션을 MAP 한방에 조회
         Map<Long, List<StaffRoles>> staffRolesMap = findStaffRolesMap(toStaffIds(result));
-
         // 루프를 돌면서 컬렉션 추가(추가 쿼리 실행X)
         // 데이터를 메모리에 올리고 매핑 처리.
         result.forEach(o -> o.setStaffRoles(staffRolesMap.get(o.getId())));
-
         return result;
     }
 
     private Map<Long, List<StaffRoles>> findStaffRolesMap(List<Long> staffIds) {
-
         List<StaffRoles> staffRoles = staffRolesRepository.findByStaffId(staffIds);
-
         // key가 orderId인 맵객체 반환
         Map<Long, List<StaffRoles>> staffMap = staffRoles.stream()
                 .collect(Collectors.groupingBy(sr -> sr.getStaffs().getId()));
-
         return staffMap;
     }
 
