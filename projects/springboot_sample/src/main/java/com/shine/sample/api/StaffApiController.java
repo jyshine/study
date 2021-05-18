@@ -20,6 +20,10 @@ public class StaffApiController {
     private final StaffsService staffsService;
 
 
+    /**
+     * v1 - 관리자 조회 API
+     * @return
+     */
     @GetMapping("/api/v1/staffs")
     public Result staffV1(){
         List<Staffs> allStaffRoles = staffsService.findAllByStaffRoles();
@@ -31,9 +35,13 @@ public class StaffApiController {
         return new Result(result);
     }
 
+    /**
+     * object 타입으로 반환하기 위한 껍데기 (collection, list 타입 반환 지양하자)
+     * @param <T>
+     */
     @Data
     @AllArgsConstructor
-    static class Result<T> {    // object 타입으로 반환하기 위한 껍데기 (collection, list 타입 반환 지양하자)
+    static class Result<T> {
         private T data;
     }
 

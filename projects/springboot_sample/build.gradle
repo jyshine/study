@@ -28,7 +28,7 @@ dependencies {
     // thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-    //개발 툴
+    // 개발 툴
     implementation 'org.springframework.boot:spring-boot-devtools'
     
     
