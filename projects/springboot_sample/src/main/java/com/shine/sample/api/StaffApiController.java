@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -24,7 +23,6 @@ public class StaffApiController {
     @GetMapping("/api/v1/staffs")
     public Result staffV1(){
         List<Staffs> allStaffRoles = staffsService.findAllByStaffRoles();
-
 
         List<StaffsDto> result = allStaffRoles.stream()
                 .map(StaffsDto::new)
