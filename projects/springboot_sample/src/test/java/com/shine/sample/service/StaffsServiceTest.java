@@ -1,15 +1,11 @@
 package com.shine.sample.service;
 
-import com.shine.sample.domain.dto.StaffsDto;
 import com.shine.sample.domain.entity.Roles;
 import com.shine.sample.domain.entity.StaffRoles;
 import com.shine.sample.domain.entity.Staffs;
 import com.shine.sample.repository.RolesRepository;
 import com.shine.sample.repository.StaffRolesRepository;
 import com.shine.sample.repository.StaffsRepository;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +21,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 @SpringBootTest
 @Transactional
 @Rollback(false)
-class StaffServiceTest {
+class StaffsServiceTest {
 
     @Autowired
     StaffsRepository staffsRepository;
@@ -37,7 +33,7 @@ class StaffServiceTest {
     StaffRolesRepository staffRolesRepository;
 
     @Autowired
-    StaffService staffService;
+    StaffsService staffsService;
 
     @BeforeEach
     void setUp() {
@@ -60,7 +56,6 @@ class StaffServiceTest {
 
 
 
-
     }
 
     @Test
@@ -74,7 +69,7 @@ class StaffServiceTest {
 
     @Test
     void 관리자_조회_리스트_테스트(){
-        List<Staffs> allByDto_optimization = staffService.findAllByStaffRoles();
+        List<Staffs> allByDto_optimization = staffsService.findAllByStaffRoles();
         for(Staffs staff : allByDto_optimization){
             for(int i=0; i<staff.getStaffRoles().size(); i++){
                 System.out.println(staff.getUsername()+" : "+staff.getStaffRoles().get(i).getRoles().getRoleName());

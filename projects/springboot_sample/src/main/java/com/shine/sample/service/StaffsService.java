@@ -1,23 +1,27 @@
 package com.shine.sample.service;
 
+import com.shine.sample.domain.entity.Roles;
 import com.shine.sample.domain.entity.StaffRoles;
 import com.shine.sample.domain.entity.Staffs;
+import com.shine.sample.repository.RolesRepository;
 import com.shine.sample.repository.StaffRolesRepository;
 import com.shine.sample.repository.StaffsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class StaffService {
+public class StaffsService {
 
     private final StaffsRepository staffsRepository;
     private final StaffRolesRepository staffRolesRepository;
+    private final RolesRepository rolesRepository;
 
 
     /**
@@ -47,5 +51,33 @@ public class StaffService {
         return result.stream()
                 .map(o -> o.getId())
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * 관리자 저장
+     */
+
+    public void Save(){
+        Roles roles1 = new Roles("admin", "관리자");
+        Roles roles2 = new Roles("user", "사용자");
+        Roles roles3 = new Roles("guest", "손님");
+
+        rolesRepository.saveAll(Arrays.asList(roles1, roles2, roles3));
+
+        staffRolesRepository.save(
+                StaffRoles.createStaffRoles(
+                        staffsRepository.save(new Staffs("test111","test@gmail.com","1234","01012341234",1)),
+                        rolesRepository.findByRoleKey("guest")));
+
+        staffRolesRepository.save(
+                StaffRoles.createStaffRoles(
+                        staffsRepository.save(new Staffs("test222","test222@gmail.com","1234","01012341234",1)),
+                        rolesRepository.findByRoleKey("user")));
+
+
+        List<Roles> roles = rolesRepository.findAll();
+        Staffs staff = new Staffs("test333", "333@gmail.com", "1234", "33333333", 1);
+        staff.addRoles(roles);
+        Staffs savedStaff = staffsRepository.save(staff);
     }
 }
