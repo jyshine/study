@@ -1,66 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="ko">
-<head th:replace="fragments/header :: header">
-<body class="hold-transition login-page">
-<!--[if lt IE 10]>
-<div id="pp_iever_upgradeinfo" style="width:100%; padding:10px; text-align:center; background-color:#db4c3b;">
-    <div style="width:800px; margin: 0 auto; position:relative; color:#fff; z-index:2000;">
-        본 사이트는 익스플로러10 이상, 크롬, 오페라, 파이어폭스 브라우저등의 최신버전에 최적화 되어 있습니다.<br/>지금 사용하고 계시는 브라우저는 곧 지원이 중단되므로 <a href="http://windows.microsoft.com/ko-kr/internet-explorer/ie-11-worldwide-languages" target="_blank" style="color:#1cd9e0;">익스플로러 최신버젼</a>으로 업그레이드하시거나 <a href="https://www.google.com/intl/ko/chrome/browser/" target="_blank" style="color:#1cd9e0;">크롬</a>, <a href="http://www.opera.com/ko/computer" target="_blank" style="color:#1cd9e0;">오페라</a>, <a href="https://www.mozilla.org/en-US/firefox/new/?scene=2" target="_blank" style="color:#1cd9e0;">파이어폭스</a>등의 최신 브라우저를 이용해 주세요.
-    </div>
-</div>
-<![endif]-->
-<!--[if lt IE 9]>
-<script src="/js/html5shiv.js"></script>
-<script src="/js/IE9.js"></script>
-<script src="/js/respond.min.js"></script>
-<![endif]-->
-<div class="login-box">
-    <div class="login-logo">
-        <a href="/home"><img src="/images/admin/login_logo.png" alt="플 로고"></a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <form>
-            <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="ID">
-                <span class="glyphicon glyphicon-envelope glyphicon-user"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <p class="ad_input_row">
-                        <input type="checkbox" class="check" id="check1">
-                        <label class="check_label" for="check1">아이디 저장</label>
-                    </p>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-danger btn-block btn-flat pp_login_btn">Login</button>
-                </div>
-                <!-- /.col -->
-            </div>
-        </form>
-        <div class="ad_login_txt">
-            본 페이지는 스프링부트 샘플 프로젝트 입니다..<br/> 로그인 정보 ID:test@sample.com <br>  비밀번호 : test123 <br>
-        </div>
-    </div>
-    <!-- /.login-box-body -->
-</div>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="layouts/header :: header">
 
-<!-- js -->
-<script src="/plugin/jquery/dist/jquery.min.js"></script>
-<script src="/plugin/jquery-ui/jquery-ui.min.js"></script>
-<script src="/plugin/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-<script src="/plugin/fastclick/lib/fastclick.js"></script>
-<script src="/js/jquery.mCustomScrollbar.min.js"></script>
-<script src="/js/admin/src/adminlte.js"></script>
-<script src="/js/admin/src/demo.js"></script>
-<script src="/js/admin/pp_ui.js"></script>
-<!-- //js -->
-</body>
 
 </html>
