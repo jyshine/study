@@ -22,7 +22,15 @@ filter, sorted, map, collect 같은 여러 빌딩 블록 연산을 연결해서 
 필터링
     프레디케이트
     고유 요소
-
+슬라이싱
+    takeWhile
+    dropWhile
+    limit
+    skip
+매핑 : 특정 데이터를 선택하는 기능. 인수로 제공된 함수는 각 요소에서 적용되며 함수를 적용한 결과가 새로운 요소로 매핑된다.
+    List<String> dishName = menu.stream()
+                            .map(Dish:: getName)    getName은 문자열을 반환하므로 map 메서드의 출력 스트림은 Stream<String>형식을 갖는다.
+                            .collect(toList());
 
 
 
