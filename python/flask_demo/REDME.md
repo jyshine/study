@@ -21,13 +21,15 @@ export FLASK_ENV=development
 flask run
 </code></pre>
 
-http://localhost:5000/basic_api/hello_world
-
 
 <h2>
 Blueprints 사용
 </h2>
 
 <h2>
-Jinja Templates
+Jinja Templates 사용
+</h2>
+
+<h2>
+RESTx 사용
 </h2>
