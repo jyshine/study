@@ -20,11 +20,10 @@ flask run
 </code></pre>
 
 
-<p>
-Blueprints 사용
-Jinja Templates 사용
-RESTx 사용
-</p>
+- Blueprints 사용
+- Jinja Templates 사용
+- RESTx 사용
+
 
 http://localhost:5000/documented_api/doc
 
