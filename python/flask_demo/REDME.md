@@ -33,3 +33,6 @@ Jinja Templates 사용
 <h2>
 RESTx 사용
 </h2>
+
+http://localhost:5000/documented_api/doc
+
