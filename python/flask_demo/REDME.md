@@ -1,6 +1,4 @@
-<h2>
-기본 CRUD 세팅
-</h2>
+<h2>개발환경 셋팅</h2>
 <pre><code>
 mkdir flask_demo
 
@@ -22,17 +20,11 @@ flask run
 </code></pre>
 
 
-<h2>
+<p>
 Blueprints 사용
-</h2>
-
-<h2>
 Jinja Templates 사용
-</h2>
-
-<h2>
 RESTx 사용
-</h2>
+</p>
 
 http://localhost:5000/documented_api/doc
 
