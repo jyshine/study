@@ -2,17 +2,18 @@
 from flask import Blueprint
 from flask import request
 
+blueprint = Blueprint('api', __name__, url_prefix='/basic_api')
 
-blueprint = Blueprint('api',__name__, url_prefix='/basic_api')
 
 @blueprint.route('/hello_world')
 def hello_world():
     return 'Hello, World!'
 
-@blueprint.route('/entities', methods=['GET','POST'])
+
+@blueprint.route('/entities', methods=['GET', 'POST'])
 def entities():
     if request.method == "GET":
-        return{
+        return {
             'message': 'This endpoint should return a list of entities',
             'method': request.method
         }
@@ -20,10 +21,11 @@ def entities():
         return {
             'message': 'This endpoint should create an entity',
             'method': request.method,
-		    'body': request.json
+            'body': request.json
         }
 
-@blueprint.route('/entities', methods=['GET','POST'])
+
+@blueprint.route('/entities', methods=['GET', 'POST'])
 def entity(entity_id):
     if request.method == "GET":
         return {
@@ -36,7 +38,7 @@ def entity(entity_id):
             'id': entity_id,
             'message': 'This endpoint should update the entity {}'.format(entity_id),
             'method': request.method,
-		'body': request.json
+            'body': request.json
         }
     if request.method == "DELETE":
         return {

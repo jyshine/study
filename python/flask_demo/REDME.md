@@ -4,7 +4,6 @@
 <pre><code>
 mkdir flask_demo
 
-
 cd flask_demo
 
 python3 -m venv venv

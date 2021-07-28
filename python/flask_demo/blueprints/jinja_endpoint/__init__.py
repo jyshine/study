@@ -3,7 +3,7 @@ from flask import Blueprint
 from flask import request
 from flask import render_template
 
-blueprint = Blueprint('jinja_template',__name__, url_prefix='/jinja_template')
+blueprint = Blueprint('jinja_template', __name__, url_prefix='/jinja_template')
 
 
 @blueprint.route('')
