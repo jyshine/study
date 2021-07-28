@@ -25,5 +25,7 @@ flask run
 - RESTx 사용
 
 
-http://localhost:5000/documented_api/doc
+- URL : http://localhost:5000/documented_api/doc
+
+![Flask 스웨거](https://github.com/jyshine/study/blob/main/python/flask_demo/static/swagger_ui.png "flask-swagger")
 
