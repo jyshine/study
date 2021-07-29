@@ -34,6 +34,7 @@ entity_example = {'id': 1, 'name': 'Entity name'}
 class entities(Resource):
     '''Get entities list and create new entities'''
 
+    @namespace.doc(security='ApiKeyAuth')
     @namespace.response(500, 'Internal Server error')
     @namespace.marshal_list_with(entity_list_model)
     def get(self):
