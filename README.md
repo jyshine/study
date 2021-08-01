@@ -9,11 +9,11 @@
 1. [python basics](https://github.com/jyshine/study/blob/main/python/Python_Basic.ipynb) (파이썬 기초 학습)
 2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) (구글 트랜드 피드 코드)  
 3. [선형 회귀](https://github.com/jyshine/study/blob/main/python/linear_regression.ipynb)(딥러닝 코드)
-4. [Flask Demo](https://github.com/jyshine/study/tree/main/python/flask_demo) (Flask sample project)
+
 
 ## projects
-1. [spring boot](https://github.com/jyshine/study/tree/main/projects)
-
+1. [spring boot](https://github.com/jyshine/study/tree/main/projects) (springboot sample project)
+2. [Flask Demo](https://github.com/jyshine/study/tree/main/python/flask_demo) (Flask sample project)
 
 ## App 
 1. [Flutter provider](https://github.com/jyshine/study/tree/main/flutter/flutter_study/flutter_provider)
