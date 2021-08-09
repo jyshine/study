@@ -33,24 +33,24 @@ test_fields = ['test1', 'test2', 'test3', 'test4', 'foo']  # True
 # print(has_invalid_fields(test_fields))
 # print(has_invalid_fields2(test_fields))
 
-# def add_animal_in_family(species, animal, family):
-#     if family not in species:
-#         # 키 값이 없는 경우 set으로 초기화
-#         species[family] = set()
-#     species[family].add(animal)
-#
-#
-# species = {}
-#
-# add_animal_in_family(species, 'cat1', 'felidea')
-# add_animal_in_family(species, 'cat2', 'felidea')
-# add_animal_in_family(species, 'cat3', 'felidea')
-# add_animal_in_family(species, 'cat3', 'felidea')
-# add_animal_in_family(species, 'cat4', 'felidea2')
-# add_animal_in_family(species, 'cat5', 'felidea2')
-# add_animal_in_family(species, 'cat6', 'felidea2')
-#
-# print(species)
+def add_animal_in_family(species, animal, family):
+    if family not in species:
+        # 키 값이 없는 경우 set으로 초기화
+        species[family] = set()
+    species[family].add(animal)
+
+
+species = {}
+
+add_animal_in_family(species, 'cat1', 'felidea')
+add_animal_in_family(species, 'cat2', 'felidea')
+add_animal_in_family(species, 'cat3', 'felidea')
+add_animal_in_family(species, 'cat3', 'felidea')
+add_animal_in_family(species, 'cat4', 'felidea2')
+add_animal_in_family(species, 'cat5', 'felidea2')
+add_animal_in_family(species, 'cat6', 'felidea2')
+
+print(species)
 #
 # import collections
 #
