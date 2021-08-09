@@ -10,12 +10,13 @@
 2. [google feed](https://github.com/jyshine/study/blob/main/python/google_feed.ipynb) (구글 트랜드 피드 코드)  
 3. [선형 회귀](https://github.com/jyshine/study/blob/main/python/linear_regression.ipynb)(딥러닝 코드)
 
+
 ## projects
-1. [spring boot](https://github.com/jyshine/study/tree/main/projects)
+1. [spring boot](https://github.com/jyshine/study/tree/main/projects) (springboot sample project)
+2. [Flask Demo](https://github.com/jyshine/study/tree/main/python/flask_demo) (Flask sample project)
 
-## JavaScript
+## App 
+1. [Flutter provider](https://github.com/jyshine/study/tree/main/flutter/flutter_study/flutter_provider)
+2. [Flutter multi provider](https://github.com/jyshine/study/tree/main/flutter/flutter_study/flutter_provider_multi)
 
-
-## Problem Solving
-
-
+![Flutter multi provider](https://github.com/jyshine/study/blob/main/flutter/flutter_study/flutter_provider_multi/test/movie_provider.gif)
