@@ -107,3 +107,5 @@ node_modules/
 .springBeans
 docs/_build/
 .DS_Store
+
+out/
